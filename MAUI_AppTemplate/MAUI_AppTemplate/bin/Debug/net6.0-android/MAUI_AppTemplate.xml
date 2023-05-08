@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>MAUI_AppTemplate</name>
+    </assembly>
+    <members>
+        <member name="F:MAUI_AppTemplate.ViewModels.HomeViewModel.doSthCommand">
+            <summary>The backing field for <see cref="P:MAUI_AppTemplate.ViewModels.HomeViewModel.DoSthCommand"/>.</summary>
+        </member>
+        <member name="P:MAUI_AppTemplate.ViewModels.HomeViewModel.DoSthCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand`1"/> instance wrapping <see cref="M:MAUI_AppTemplate.ViewModels.HomeViewModel.DoSthAsync(System.Object)"/>.</summary>
+        </member>
+    </members>
+</doc>

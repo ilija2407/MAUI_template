@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="MAUI_AppTemplate.Pages.HomePage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Name="Self"
+    Title="HomePage">
+    <ScrollView Orientation="Vertical" VerticalOptions="FillAndExpand">
+        <VerticalStackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+            <Image
+                Margin="5"
+                Aspect="AspectFill"
+                HeightRequest="200"
+                HorizontalOptions="FillAndExpand"
+                Source="https://images.pexels.com/photos/1766838/pexels-photo-1766838.jpeg" />
+
+            <Label
+                Margin="20"
+                FontSize="Large"
+                Text="Categories" />
+
+            <CollectionView
+                Margin="20,0,0,0"
+                HorizontalOptions="FillAndExpand"
+                ItemsLayout="HorizontalList"
+                ItemsSource="{Binding Monkeys}">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition Width="Auto" />
+                            </Grid.ColumnDefinitions>
+                            <Image
+                                Grid.RowSpan="2"
+                                Aspect="AspectFill"
+                                HeightRequest="90"
+                                Source="{Binding ImageUrl}"
+                                WidthRequest="90" />
+                            <Label
+                                Grid.Column="1"
+                                FontAttributes="Bold"
+                                Text="{Binding Name}" />
+                            <Label
+                                Grid.Row="1"
+                                Grid.Column="1"
+                                FontAttributes="Italic"
+                                Text="{Binding Location}"
+                                VerticalOptions="End" />
+                        </Grid>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+
+            <Label
+                Margin="20"
+                FontSize="Large"
+                Text="My Progress" />
+
+
+            <StackLayout BindableLayout.ItemsSource="{Binding Monkeys}" Orientation="Vertical">
+                <BindableLayout.ItemTemplate>
+                    <DataTemplate>
+                        <Grid Padding="10">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition Width="Auto" />
+                            </Grid.ColumnDefinitions>
+                            <Image
+                                Grid.RowSpan="2"
+                                Aspect="AspectFill"
+                                HeightRequest="90"
+                                Source="{Binding ImageUrl}"
+                                WidthRequest="90" />
+                            <Label
+                                Grid.Column="1"
+                                FontAttributes="Bold"
+                                Text="{Binding Name}" />
+                            <Label
+                                Grid.Row="1"
+                                Grid.Column="1"
+                                FontAttributes="Italic"
+                                Text="{Binding Location}"
+                                VerticalOptions="End" />
+                        </Grid>
+                    </DataTemplate>
+                </BindableLayout.ItemTemplate>
+            </StackLayout>
+
+
+
+            <Label
+                Margin="20"
+                FontSize="Large"
+                Text="Favourites">
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding DoSthCommand}" CommandParameter="pero" />
+                </Label.GestureRecognizers>
+            </Label>
+
+            <CollectionView
+                Margin="20,0,0,0"
+                ItemsLayout="HorizontalList"
+                ItemsSource="{Binding Monkeys}">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Grid Padding="10" BackgroundColor="{Binding BackgroundColor}">
+
+                            <Grid.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding Path=BindingContext.DoSthCommand, Source={x:Reference Self}}" CommandParameter="{Binding .}" />
+                            </Grid.GestureRecognizers>
+
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition Width="Auto" />
+                            </Grid.ColumnDefinitions>
+                            <Image
+                                Grid.RowSpan="2"
+                                Aspect="AspectFill"
+                                HeightRequest="90"
+                                Source="{Binding ImageUrl}"
+                                WidthRequest="90" />
+                            <Label
+                                Grid.Column="1"
+                                FontAttributes="Bold"
+                                Text="{Binding Name}" />
+                            <Label
+                                Grid.Row="1"
+                                Grid.Column="1"
+                                FontAttributes="Italic"
+                                Text="{Binding Location}"
+                                VerticalOptions="End" />
+                        </Grid>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+
+
+            <Label
+                Margin="20"
+                FontSize="Large"
+                Text="Fun facts" />
+
+            <CollectionView
+                Margin="20,0,0,0"
+                ItemsLayout="HorizontalList"
+                ItemsSource="{Binding Monkeys}">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Grid Padding="10">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition Width="Auto" />
+                            </Grid.ColumnDefinitions>
+                            <Image
+                                Grid.RowSpan="2"
+                                Aspect="AspectFill"
+                                HeightRequest="90"
+                                Source="{Binding ImageUrl}"
+                                WidthRequest="90" />
+                            <Label
+                                Grid.Column="1"
+                                FontAttributes="Bold"
+                                Text="{Binding Name}" />
+                            <Label
+                                Grid.Row="1"
+                                Grid.Column="1"
+                                FontAttributes="Italic"
+                                Text="{Binding Location}"
+                                VerticalOptions="End" />
+                        </Grid>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+
+
+            <Label
+                Margin="20"
+                FontSize="Large"
+                Text="This week spotlight" />
+
+            <Image
+                Margin="5"
+                Aspect="AspectFill"
+                HeightRequest="200"
+                HorizontalOptions="FillAndExpand"
+                Source="https://images.pexels.com/photos/1766838/pexels-photo-1766838.jpeg" />
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>
